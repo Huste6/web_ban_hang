@@ -76,20 +76,33 @@ exports.update_product = async (req, res) => {
     }
 };
 // delete value
-exports.delete_product = async (req,res) =>{
-    try{
-        const result = await database.pool.query({
-            text:'delete from product where product_id=$1',
-            values:[req.params.product_id]
-        })
-        if(result.rowCount==0){
-            return res.status(404).json({error: 'product_id not found'})
+exports.delete_product = async (req, res) => {
+    try {
+        // Check if the product is referenced in the Order table
+        const orderCheckResult = await database.pool.query({
+            text: 'SELECT 1 FROM "Order" WHERE product_id = $1 LIMIT 1',
+            values: [req.params.product_id]
+        });
+
+        if (orderCheckResult.rowCount > 0) {
+            return res.status(409).json({ error: 'Cannot delete product as it is referenced in orders' });
         }
-        return res.status(404).send();
-    }catch(error){
-        return res.status(500).json({error: error.message})
+
+        // Proceed to delete the product if not referenced
+        const result = await database.pool.query({
+            text: 'DELETE FROM product WHERE product_id = $1',
+            values: [req.params.product_id]
+        });
+
+        if (result.rowCount == 0) {
+            return res.status(404).json({ error: 'product_id not found' });
+        }
+
+        return res.status(200).send();
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
     }
-}; 
+};
 // get product by product_id 
 exports.getProductByProduct_id = async(req,res)=>{
     try{

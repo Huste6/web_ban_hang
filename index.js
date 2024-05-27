@@ -2,7 +2,9 @@ const express = require('express')
 const cors = require('cors');
 const database = require('./services/database')
 const app = express()
-
+app.get('/',(req,res)=>{
+    res.sendFile(path.join(__dirname,'index.html'))
+});
 app.use(cors());
 app.use(express.json())
 

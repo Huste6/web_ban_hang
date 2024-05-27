@@ -64,3 +64,21 @@
 .tabcontent form button {
   align-self: flex-start;
 }
+table{
+  margin: 50px;
+  border-collapse: collapse;
+}
+
+table{
+  border:1px solid #666;
+}
+table td,table th{
+  border-top:1px solid #666;
+}
+table td,table th{
+  text-align: center;
+  padding: 4px 8px;
+}
+table tr:nth-child(even){
+  background: #ccc;
+}

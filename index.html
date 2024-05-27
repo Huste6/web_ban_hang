@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>databaselab</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+  <div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'Home')">Home</button>
+    <button class="tablinks" onclick="openTab(event, 'product-site')">Product</button>
+    <button class="tablinks" onclick="openTab(event, 'customer-site')">Customer</button>
+    <button class="tablinks" onclick="openTab(event, 'order-site')">Order</button>
+    <button class="tablinks" onclick="openTab(event, 'delivery-site')">Delivery</button>
+    <button class="tablinks" onclick="openTab(event, 'rating-site')">Rating</button>
+    <button class="tablinks" onclick="openTab(event, 'inventory-site')">Inventory</button>
+    <button class="tablinks" onclick="openTab(event, 'cart-site')">Cart</button>
+  </div>
+  
+  <!-- Tab content -->
+  <!-- Home tab -->
+  <div id="Home" class="tabcontent">
+    <div class="home">
+      <h1>Cửa hàng QDS</h1>
+      <h2>Sự hài lòng của khách hàng là tôn chỉ của QDS store!!!</h2>
+    </div>
+    <img src="https://pfst.cf2.poecdn.net/base/image/76133802ea3a9cdd35d15ae31c3e0096277b3646afb51eb144a11892663501ed?w=1024&h=1024&pmaid=87193045" alt="Home Image">
+  </div>
+  
+  <!-- product tab -->
+  <div id="product-site" class="tabcontent">
+    <table id="product-table">
+      <thead id="product-table-head">
+        <tr>
+          <th>product_id</th>
+          <th>product_name</th>
+          <th>price</th>
+          <th>category</th>
+          <th>description</th>
+          <th>Xóa</th>
+        </tr>
+      </thead>
+      <tbody id="product-table-body">
+        <!-- Product rows will be appended here -->
+      </tbody>
+    </table>
+
+    <div id="insert-product-form">
+      <h3>Thêm sản phẩm</h3>
+      <form id="product-create-form">  
+        <label for="product-name">Tên sản phẩm:</label>
+        <input type="text" id="product-name" name="product-name"><br>
+    
+        <label for="price">Giá sản phẩm:</label>
+        <input type="number" id="price" name="price"><br>
+    
+        <label for="category">Phân loại:</label>
+        <input type="text" id="category" name="category"><br>
+    
+        <label for="description">Mô tả sản phẩm:</label>
+        <input type="text" id="description" name="description"><br>
+
+        <button type="submit">Thêm sản phẩm</button>
+      </form>  
+    </div>
+
+    <div id="update-product-form">
+      <h3>Cập nhật sản phẩm</h3>
+      <form id="product-update-form">
+          <label for="update-product-id">Chọn ID sản phẩm muốn cập nhật:</label>
+          <input type="number" id="update-product-id" name="update-product-id"><br>
+    
+          <label for="update-product-name">Tên sản phẩm muốn đổi:</label>
+          <input type="text" id="update-product-name" name="update-product-name"><br>
+          <label for="update-price">Giá sản phẩm muốn đổi:</label>
+          <input type="number" id="update-price" name="update-price"><br>
+          <label for="update-category">Phân loại muốn đổi:</label>
+          <input type="text" id="update-category" name="update-category"><br>
+          <label for="update-description">Mô tả sản phẩm muốn đổi:</label>
+          <input type="text" id="update-description" name="update-description"><br>
+          <button type="submit">Cập nhật sản phẩm</button>
+      </form>  
+    </div>
+
+    <div id="get-product-form">
+      <h3>Tìm kiếm sản phẩm qua ID</h3>
+      <form>
+          <label for="get-product-id">ID sản phẩm:</label>
+          <input type="number" id="get-product-id" name="get-product-id"><br>
+          <button type="submit">Tìm kiếm sản phẩm</button>
+      </form>
+  </div>
+  <div id="product-detail"></div>
+  
+  </div>
+  
+  <!-- customer tab -->
+  <div id="customer-site" class="tabcontent">
+    <table id="customer-table">
+      <thead id="customer-table-head">
+        <tr>
+          <th>customer_id</th>
+          <th>customer_name</th>
+          <th>telephone</th>
+          <th>email</th>
+          <th>age</th>
+          <th>address</th>
+          <th>Xóa</th>
+        </tr>
+      </thead>
+      <tbody id="customer-table-body">
+        <!-- Customer rows will be appended here -->
+      </tbody>
+    </table>
+
+    <div id="insert-customer-form">
+      <h3>Thêm khách hàng</h3>
+      <form id="customer-create-form">  
+        <label for="customer-name">Tên khách hàng:</label>
+        <input type="text" id="customer-name" name="customer-name"><br>
+    
+        <label for="telephone">Số điện thoại khách hàng:</label>
+        <input type="text" id="telephone" name="telephone"><br>
+    
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br>
+    
+        <label for="age">Tuổi:</label>
+        <input type="number" id="age" name="age"><br>
+
+        <label for="address">Địa chỉ khách hàng:</label>
+        <input type="text" id="address" name="address"><br>
+
+        <button type="submit">Thêm khách hàng</button>
+      </form>  
+    </div>
+
+    <div id="update-customer-form">
+      <h3>Cập nhật khách hàng</h3>
+      <form id="customer-update-form">
+          <label for="update-customer-id">Chọn ID khách hàng muốn cập nhật:</label>
+          <input type="number" id="update-customer-id" name="update-customer-id"><br>
+    
+          <label for="update-customer-name">Tên khách hàng muốn đổi:</label>
+          <input type="text" id="update-customer-name" name="update-customer-name"><br>
+          
+          <button type="submit">Cập nhật khách hàng</button>
+      </form>  
+    </div>
+
+    <div id="get-customer-form">
+      <h3>Tìm kiếm khách hàng qua ID</h3>
+      <form>
+          <label for="get-customer-id">ID khách hàng:</label>
+          <input type="number" id="get-customer-id" name="get-customer-id"><br>
+          <button type="submit">Tìm kiếm khách hàng</button>
+      </form>
+  </div>
+  <div id="customer-detail"></div>
+  
+  </div>
+
+  <div id="order-site" class="tabcontent">
+    <!-- Select -->
+    <div id="select-form">
+        <h3>Hiển thị đơn order</h3>
+        <table>
+            <thead id="order-table-head">
+                <tr>
+                    <th>order_id</th>
+                    <th>customer_name</th>
+                    <th>product_name</th>
+                    <th>order_quantity</th>
+                    <th>total_money</th>
+                    <th>payment_method</th>
+                    <th>time_order</th>
+                </tr>
+            </thead>
+            <tbody id="order-table-body">
+                <!-- Order rows will be appended here -->
+            </tbody>
+        </table>
+    </div>
+  </div>
+
+  <div id="delivery-site" class="tabcontent">
+    <!-- Select -->
+    <div id="select-form">
+        <h3>Hiển thị đơn order</h3>
+        <table>
+            <thead id="delivery-table-head">
+                <tr>
+                    <th>delivery_id</th>
+                    <th>order_id</th>
+                    <th>receiver_name</th>
+                    <th>phone_number</th>
+                    <th>address</th>
+                    <th>status</th>
+                </tr>
+            </thead>
+            <tbody id="delivery-table-body">
+                <!-- Order rows will be appended here -->
+            </tbody>
+        </table>
+    </div>
+  </div>
+
+  <div id="rating-site" class="tabcontent">
+    <!-- Select -->
+    <div id="select-form">
+        <h3>Hiển thị rating</h3>
+        <table>
+            <thead id="rating-table-head">
+                <tr>
+                    <th>rate_id</th>
+                    <th>customer_id</th>
+                    <th>product_id</th>
+                    <th>rate_star</th>
+                    <th>comment</th>
+                    <th>rate_time</th>
+                </tr>
+            </thead>
+            <tbody id="rating-table-body">
+                <!-- Order rows will be appended here -->
+            </tbody>
+        </table>
+    </div>
+  </div>
+
+  <div id="inventory-site" class="tabcontent">
+    <!-- Select -->
+    <div id="select-form">
+        <h3>Hiển thị rating</h3>
+        <table>
+            <thead id="inventory-table-head">
+                <tr>
+                    <th>inventory_id</th>
+                    <th>product_name</th>
+                    <th>product_quantity</th>
+                    <th>latest_received_date</th>
+                </tr>
+            </thead>
+            <tbody id="inventory-table-body">
+                <!-- Order rows will be appended here -->
+            </tbody>
+        </table>
+    </div>
+  </div>
+
+  <div id="cart-site" class="tabcontent">
+    <!-- Select -->
+    <div id="select-form">
+        <h3>Hiển thị cart</h3>
+        <table>
+            <thead id="cart-table-head">
+                <tr>
+                    <th>cart_id</th>
+                    <th>customer_name</th>
+                    <th>product_name</th>
+                </tr>
+            </thead>
+            <tbody id="cart-table-body">
+                <!-- Order rows will be appended here -->
+            </tbody>
+        </table>
+    </div>
+  </div>
+
+  <script src="./src/main.js"></script>
+  <script src="./src/product.js"></script>
+  <script src="./src/customer.js"></script>
+  <script src="./src/order.js"></script>
+  <script src="./src/delivery.js"></script>
+  <script src="./src/rating.js"></script>
+  <script src="./src/inventory.js"></script>
+  <script src="./src/cart.js"></script>
+</body>
+</html>

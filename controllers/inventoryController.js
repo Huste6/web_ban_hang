@@ -3,7 +3,7 @@ const database = require('../services/database')
 exports.getInventory = async (req,res)=>{
     try{
         const result = await database.pool.query(`
-            select 
+            select iv.inventory_id,
                 (select ROW_TO_JSON(product_obj) from (
                     select pr.product_name
                     from product as pr
