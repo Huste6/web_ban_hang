@@ -1,20 +1,20 @@
-var inventoryApi = 'http://localhost:3000/cart';
+var cartAPI = 'http://localhost:3000/cart';
 
 function start() {
-    getinventory(renderinventory);
+    getCart(renderCart);
 }
 
 start();
 
-function getinventory(callback) {
-    fetch(inventoryApi)
+function getCart(callback) {
+    fetch(cartAPI)
         .then((res) => res.json())
         .then(callback);
 }
 
-function renderinventory(inventorys) {
-    var inventoryListBlock = document.querySelector('#cart-table-body');
-    var htmls = inventorys.map((cart) => {
+function renderCart(carts) {
+    var CartListBlock = document.querySelector('#cart-table-body');
+    var htmls = carts.map((cart) => {
         return `
             <tr>
                 <td>${cart.cart_id}</td>
@@ -23,5 +23,5 @@ function renderinventory(inventorys) {
             </tr>
         `;
     });
-    inventoryListBlock.innerHTML = htmls.join('');
+    CartListBlock.innerHTML = htmls.join('');
 }
