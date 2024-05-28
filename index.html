@@ -92,8 +92,8 @@
           <input type="number" id="get-product-id" name="get-product-id"><br>
           <button type="submit">Tìm kiếm sản phẩm</button>
       </form>
-  </div>
-  <div id="product-detail"></div>
+    </div>
+    <div id="product-detail"></div>
   
   </div>
   
@@ -163,6 +163,7 @@
   
   </div>
 
+  <!-- order tab -->
   <div id="order-site" class="tabcontent">
     <!-- Select -->
     <div id="select-form">
@@ -184,8 +185,19 @@
             </tbody>
         </table>
     </div>
-  </div>
 
+    <!-- find -->
+    <div id="get-order-form">
+      <h3>Tìm kiếm sản phẩm qua ID</h3>
+      <form>
+          <label for="get-order-id">Order_id:</label>
+          <input type="number" id="get-order-id" name="get-order-id"><br>
+          <button type="submit">Tìm kiếm order</button>
+      </form>
+    </div>
+    <div id="order-detail"></div>
+  </div>
+  <!-- delivery tab -->
   <div id="delivery-site" class="tabcontent">
     <!-- Select -->
     <div id="select-form">
@@ -207,7 +219,7 @@
         </table>
     </div>
   </div>
-
+  <!-- rating tab -->
   <div id="rating-site" class="tabcontent">
     <!-- Select -->
     <div id="select-form">
@@ -229,11 +241,11 @@
         </table>
     </div>
   </div>
-
+  <!-- inventory tab -->
   <div id="inventory-site" class="tabcontent">
     <!-- Select -->
     <div id="select-form">
-        <h3>Hiển thị rating</h3>
+        <h3>Hiển thị inventory</h3>
         <table>
             <thead id="inventory-table-head">
                 <tr>
@@ -244,12 +256,22 @@
                 </tr>
             </thead>
             <tbody id="inventory-table-body">
-                <!-- Order rows will be appended here -->
+                <!-- inventory rows will be appended here -->
             </tbody>
         </table>
     </div>
-  </div>
 
+    <div id="get-inventory-form">
+      <h3>Tìm kiếm inventory</h3>
+      <form>
+          <label for="get-inventory-id">inventory_id:</label>
+          <input type="number" id="get-inventory-id" name="get-inventory-id"><br>
+          <button type="submit">Tìm kiếm inventory</button>
+      </form>
+    </div>
+    <div id="inventory-detail"></div>
+  </div>
+  <!-- cart tab -->
   <div id="cart-site" class="tabcontent">
     <!-- Select -->
     <div id="select-form">
