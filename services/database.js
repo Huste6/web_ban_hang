@@ -5,7 +5,7 @@ const pool = new Pool({
     user: 'postgres',
     password: 'nguyenngocquan',
     port: 5432,  
-    database: 'BanHang'
+    database: 'BanHangQSD'
 });
 
 // Test the connection (optional)
